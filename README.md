@@ -8,6 +8,7 @@
 - [Skill 系统研究](./docs/02-skills.md)
 - [实际应用案例](./docs/03-usecases.md)
 - [生态技术跟踪](./docs/04-ecosystem.md)
+- [长期持钱的三层商业思维框架](./docs/05-monetization-framework.md)（小红书调研）
 
 ## 相关 Issue
 
