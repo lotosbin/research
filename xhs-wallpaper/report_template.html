@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>100 个人的大实话 · 小红书卖手机壁纸</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#161514;--sub:#6f6a63;--faint:#9a938a;--line:#e8e2d9;--paper:#faf8f4;--card:#fff;
+--accent:#d8422c;--accent-soft:#fdeee9;--gold:#a9832f;--teal:#1b6b5c;--buy:#d8422c;--maybe:#c99a3f;--no:#b7b0a6}
+body{background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.hero{padding:86px 0 54px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12.5px;letter-spacing:.22em;color:var(--accent);font-weight:600}
+h1{font-size:clamp(30px,4.6vw,52px);line-height:1.14;letter-spacing:-.02em;font-weight:750;margin:18px 0 20px}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:17px;color:var(--sub);max-width:730px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 18px}
+.kpi .v{font-size:32px;font-weight:750;letter-spacing:-.02em;line-height:1.1}
+.kpi .v small{font-size:15px;font-weight:600;color:var(--sub)}
+.kpi .k{font-size:12.5px;color:var(--sub);margin-top:8px;line-height:1.45}
+section{padding:62px 0;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:10px}
+.sec-no{font-size:12px;letter-spacing:.2em;color:var(--faint);font-weight:600;white-space:nowrap}
+h2{font-size:clamp(22px,2.8vw,30px);letter-spacing:-.015em;font-weight:720;line-height:1.3}
+.sub{color:var(--sub);font-size:15px;margin:10px 0 30px;max-width:780px}
+.concl{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.cc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 24px 24px 28px;position:relative;overflow:hidden}
+.cc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent)}
+.cc h3{font-size:16.5px;font-weight:700;margin-bottom:8px}
+.cc p{font-size:14.5px;color:var(--sub)}
+.cc p b{color:var(--ink)}
+.bar-row{display:grid;grid-template-columns:190px 1fr 60px;align-items:center;gap:14px;margin:10px 0}
+.bar-lab{font-size:13.5px;text-align:right}
+.bar-track{height:14px;background:#f0ece5;border-radius:7px;overflow:hidden}
+.bar-fill{height:100%;border-radius:7px;background:linear-gradient(90deg,#e0674f,#d8422c)}
+.bar-fill.trg{background:linear-gradient(90deg,#4f9a86,#1b6b5c)}
+.bar-val{font-size:13px;color:var(--sub)}
+.split{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:center}
+.donut{width:200px;height:200px;border-radius:50%;position:relative;background:conic-gradient(var(--buy) 0 28%,var(--maybe) 28% 68%,var(--no) 68% 100%)}
+.donut::after{content:"";position:absolute;inset:34px;background:var(--paper);border-radius:50%}
+.donut .c{position:absolute;inset:0;display:grid;place-items:center;z-index:2;text-align:center}
+.donut .c b{font-size:34px;font-weight:750;display:block;line-height:1.1}
+.donut .c span{font-size:12px;color:var(--sub)}
+.legend{display:flex;flex-direction:column;gap:14px}
+.legend .row{display:flex;align-items:center;gap:12px;font-size:14.5px}
+.dot{width:12px;height:12px;border-radius:3px}
+.legend .n{margin-left:auto;color:var(--sub)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:11px 10px;text-align:right;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+th{font-size:12px;color:var(--faint);font-weight:600}
+tr.peak td{background:var(--accent-soft);font-weight:700;color:var(--accent)}
+.groups{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.g{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.g .top{display:flex;align-items:center;justify-content:space-between}
+.g .nm{font-weight:700;font-size:15px}
+.g .n{font-size:12px;color:var(--faint)}
+.g .meta{font-size:12.5px;color:var(--sub);margin:3px 0 10px}
+.stack{display:flex;height:8px;border-radius:4px;overflow:hidden;background:#f0ece5;margin-bottom:10px}
+.stack i{display:block;height:100%}
+.g .desc{font-size:13px;color:var(--sub);line-height:1.55}
+.g blockquote{font-size:13px;margin-top:10px;padding-left:11px;border-left:2px solid var(--line);line-height:1.6}
+.g blockquote span{color:var(--faint)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.fbtn{font:inherit;font-size:13px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--sub);cursor:pointer}
+.fbtn:hover{border-color:#cfc7bb}
+.fbtn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.wall{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:17px;border-left:4px solid var(--no)}
+.card[data-i="买"]{border-left-color:var(--buy)}
+.card[data-i="可能买"]{border-left-color:var(--maybe)}
+.card .ch{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.card .name{font-weight:700;font-size:14.5px}
+.card .who{font-size:12px;color:var(--faint)}
+.card .pill{margin-left:auto;font-size:11.5px;padding:2px 9px;border-radius:999px;font-weight:600;white-space:nowrap}
+.pill.b{background:var(--accent-soft);color:var(--accent)}
+.pill.m{background:#fbf3e0;color:#9a7320}
+.pill.n{background:#f1eee9;color:#8b847a}
+.card q{display:block;font-size:13.5px;line-height:1.62;margin:9px 0 11px}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{font-size:11px;padding:2.5px 8px;border-radius:6px;background:#f5f1eb;color:#7a736a}
+.chip.o{background:#fdf0ec;color:#b34a34}
+.chip.t{background:#eef5f2;color:#2a6e5e}
+.acts{counter-reset:a;display:grid;gap:14px}
+.act{display:grid;grid-template-columns:44px 1fr;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+.act .no{counter-increment:a;font-size:22px;font-weight:750;color:var(--accent);opacity:.5}
+.act .no::before{content:counter(a,decimal-leading-zero)}
+.act h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.act p{font-size:14px;color:var(--sub)}
+.act p b{color:var(--ink)}
+.note{background:#fbf7f0;border:1px solid #efe4d3;border-radius:16px;padding:22px 24px;font-size:14px;color:#5e5548;margin-top:22px}
+.note b{color:#8a5a1f}
+footer{padding:44px 0 70px;color:var(--faint);font-size:12.5px;text-align:center}
+@media(max-width:820px){.kpis{grid-template-columns:repeat(2,1fr)}.concl,.groups,.wall{grid-template-columns:1fr}
+.split{grid-template-columns:1fr;justify-items:center}.bar-row{grid-template-columns:118px 1fr 46px}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+<div class="eyebrow">小红书 · 手机壁纸 · 模拟用户研究</div>
+<h1>100 个人的大实话：<br>在小红书卖手机壁纸，<em>到底能不能赚钱</em>？</h1>
+<p class="lede">我先去小红书实抓了笔记与评论、翻了一手平台规则、比对了淘宝与 Wallpaper Engine 的价格，再据此构造 100 位可追溯的模拟用户，让他们对着「9.9 元一套 20 张」这个计划说实话。</p>
+<div class="kpis">
+<div class="kpi"><div class="v">28<small>%</small></div><div class="k">明确会买；另 40% 看情况，32% 直接不买</div></div>
+<div class="kpi"><div class="v">5<small> 元</small></div><div class="k">一套 20 张的心理价中位数，不是 9.9</div></div>
+<div class="kpi"><div class="v">23<small> 人</small></div><div class="k">愿意付 9.9；另有 23 人一分钱都不肯花</div></div>
+<div class="kpi"><div class="v">5–7<small> 元</small></div><div class="k">收入峰值所在价格带，9.9 已越过峰值</div></div>
+</div></div></header>
+
+<section><div class="wrap">
+<div class="sec-head"><span class="sec-no">结论先行</span><h2>四句话，把这件事说穿</h2></div>
+<div class="concl">
+<div class="cc"><h3>① 9.9 元踩在悬崖边</h3><p>100 人里只有 <b>23 人</b>愿意为一套 20 张付 9.9。按收入算，<b>5–7 元反而更赚</b>——9.9 还没到收入峰值，就已经丢掉七成顾客。</p></div>
+<div class="cc"><h3>② 真正肯出高价的是「商用」</h3><p>出价 15–30 元的是汉服店、民宿茶室、手机壳店主、素材站。他们要的不是「好看」，是<b>书面商用授权 + 分层源文件</b>。溢价在这里，不在图里。</p></div>
+<div class="cc"><h3>③ 免费是这个赛道的默认值</h3><p>实测 73 条真实评论，约 <b>60 条</b>是「求图 / 礼貌拿图 / 三连求图」。你的对手不是同行画师，是 0.01 元包售后，和「关注就送」。</p></div>
+<div class="cc"><h3>④ 硬门槛：前半年根本卖不了</h3><p>电子资源需定向准入：<b>入驻满 180 天、笔记满 30 篇、粉丝满 1000、某月流水 6000</b>。新号 0 粉开不了店；任何位置导流微信＝限流封号。</p></div>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="sec-head"><span class="sec-no">01</span><h2>这 100 个人是谁</h2></div>
+<p class="sub">不是同一个模子刻出来的「目标用户」。19 个细分群体：A 潜在买家 60 人、B 已买过 / 踩过坑 12 人、C 同行卖家与退场者 14 人、D 内容博主 8 人、E 手机壳店 / 素材站 / 法务 / 设计接单 6 人。</p>
+<div class="split">
+<div class="donut"><div class="c"><div><b>100</b><span>位模拟用户</span></div></div></div>
+<div class="legend">
+<div class="row"><span class="dot" style="background:var(--buy)"></span>买 —— 明确说会付钱<span class="n">28 人</span></div>
+<div class="row"><span class="dot" style="background:var(--maybe)"></span>可能买 —— 满足条件才买<span class="n">40 人</span></div>
+<div class="row"><span class="dot" style="background:var(--no)"></span>不买 —— 白嫖或另有替代<span class="n">32 人</span></div>
+</div></div>
+<div id="bucketBars" style="margin-top:38px"></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="sec-head"><span class="sec-no">02</span><h2>定价：把「愿不愿意买」画成一条曲线</h2></div>
+<p class="sub">柱子是这 100 人里愿意买的人数。价格越低人越多——但「人数 × 价格」算出来，收入反而在 5–7 元最高。</p>
+<div id="wtp"></div>
+<h3 style="margin:36px 0 4px;font-size:16px">每 1000 个看到你笔记的人，能带来多少收入</h3>
+<p style="font-size:13px;color:var(--faint);margin-bottom:8px">假设这 1000 人的付费意愿分布与样本一致——这是乐观情形，真实成交还要再打 3–5 折</p>
+<table><thead><tr><th>定价（元 / 套）</th><th>愿意买的人</th><th>这 1000 人里的成交</th><th>合计收入（元）</th></tr></thead><tbody id="revBody"></tbody></table>
+<div class="note"><b>怎么读这张表：</b>9.9 元时成交 230 单、收入 2277 元；降到 5 元，成交 530 单、收入 2650 元——<b>更便宜反而更赚</b>，因为丢掉的那部分顾客被价格拉了回来。但 5 元 × 530 单，刨去成本后毛利只有一千出头，还没算你的工时。所以真正的问题不在定价，在流量。</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="sec-head"><span class="sec-no">03</span><h2>他们为什么不买</h2></div>
+<p class="sub">按「提到该顾虑的人数」排序，一个人可能有多条。两个并列第一，说明这件事同时是审美生意和流量生意——两边都不能含糊。</p>
+<div id="objBars"></div>
+<div class="note"><b>两个扎眼的细节：</b>「审美不合口味」与「生意本身不成立」并列第一——前者来自买家（太花 / 太俗 / 一眼 AI），后者几乎全来自同行卖家（打不过 0.01 元、没有复购、平台不给流量）。而「自己也能做」有 12 人：最懂图的那批人（程序员、设计师）一分不付，因为他们能脚本批量生成。</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="sec-head"><span class="sec-no">04</span><h2>什么能让他们真的下单</h2></div>
+<p class="sub">「审美对味」是压倒性的第一驱动，但它是结果不是方法。往下四条才是你能动手改的杠杆。</p>
+<div id="trgBars"></div>
+<div class="note"><b>四根能拨动的杠杆：</b>① 每张标清机型与像素（1206×2622），顶部留状态栏安全区 ② 卖「省时」——成套、一次打包、持续更新、自动发货，别让人一张张存 ③ 让原创可追溯——画师署名、过程图、分层文件，这是对抗「一眼 AI」的唯一解 ④ 给商用授权书——这是把客单价从 5 元拉到 30 元的唯一钥匙。</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="sec-head"><span class="sec-no">05</span><h2>分 19 群人看，他们各不相同</h2></div>
+<p class="sub">三段色条是该组的「买 / 可能买 / 不买」构成，数字是心理价中位数，引号是该组出价最高那个人的原话。</p>
+<div class="groups" id="groups"></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="sec-head"><span class="sec-no">06</span><h2>100 条原话，一条不改</h2></div>
+<p class="sub">按「买 / 可能买 / 不买」或按群体筛选。红色左边＝会买，黄色＝看情况，灰色＝不买。</p>
+<div class="filters" id="filters"></div>
+<div class="wall" id="wall"></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="sec-head"><span class="sec-no">07</span><h2>如果你还是要入场：7 条改法</h2></div>
+<p class="sub">基于上面全部真实数据与模拟反馈，按「先做什么」排序。</p>
+<div class="acts">
+<div class="act"><div class="no"></div><div><h3>把定价从「9.9 一套」改成两层</h3><p>入门款 <b>5–7 元</b>走量、涨粉、攒评价；利润款 <b>39–99 元商用授权</b>（含分层源文件 + 书面授权书），卖给汉服店、民宿、手机壳店、素材站。9.9 是两不靠的价：C 端嫌贵，B 端又不够专业。</p></div></div>
+<div class="act"><div class="no"></div><div><h3>产品页把「参数」当成卖点写</h3><p>每张标 <b>机型 + 像素（如 1206×2622）</b>、顶部留状态栏安全区、附一张<b>实机预览</b>（锁屏时间压不压脸一眼可见）、写明「原图不压缩、直接存本地」。16 人因尺寸 / 清晰度流失，19 人因「标注清楚」才肯买。</p></div></div>
+<div class="act"><div class="no"></div><div><h3>只打穿 1–2 个细分风格，别做「什么都有一点」</h3><p>样本里能跑出溢价的风格很具体：学生「上岸 / 考试」字壁纸、职场「深色护眼 + 建筑 + 低饱和」、国风「水墨留白可商用」、二次元「角色居中不被灵动岛挡」。<b>44 人</b>把「审美对味」列为下单理由，17 人因「太花 / 太俗」拒绝——风格命中率就是生死线。</p></div></div>
+<div class="act"><div class="no"></div><div><h3>交付必须走平台自动发货，绝不用「关注私信发图」</h3><p>电子资源类目<b>固定为自动发货</b>（发品时填网盘直链 + 提取码）。「关注才发图」既是低质流量，又踩导流红线。10 人因网盘过期、加微信、解压密码而拉黑卖家。</p></div></div>
+<div class="act"><div class="no"></div><div><h3>合规是生死线，不是加分项</h3><p>AI 生成必须<b>标识</b>；不卖同人 / 明星 / 影视截图；不写「永久 / 终身」；详情页写清张数、分辨率、授权范围；任何位置不出现微信、二维码、「私信我」。违反任一条＝限流或封号，账号资产清零。</p></div></div>
+<div class="act"><div class="no"></div><div><h3>准备好「先做号 180 天」的空窗期</h3><p>开店门槛：入驻满 180 天 + 30 篇笔记 + 1000 粉 + 某月流水 6000。这半年一分钱收不到，只能用「免费单张精品 + 主页引导」养号。把它当<b>内容资产</b>经营，不是当副业收入。</p></div></div>
+<div class="act"><div class="no"></div><div><h3>把预期调到地面</h3><p>有人 4 个月画 640 张、成交 175 笔、净到手 1374 元（一张两毛一）——这是真实的中位数卖家账本。月销 100 套≈净亏，月销 500 套需约 <b>10 万赞 / 月</b>（3–5 个号矩阵）。先想清楚：你是做流量，还是做设计外包——后者 4–6 单就有 1600–6000 元，回款更快。</p></div></div>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="sec-head"><span class="sec-no">08</span><h2>方法与边界</h2></div>
+<p class="sub">诚实交代：这是「模拟用户」，不是真实问卷。</p>
+<div class="note">
+<b>真实的部分</b>：小红书笔记与评论（6 篇 / 73 条，2026-11-24 实抓）、平台规则（电子资源准入、导流红线、虚拟商品争议细则，一手规则页）、竞品价格（淘宝 0.01–9.9 元、Wallpaper Engine $4.99、爱发电 6–10 元 / 月）、卖家真实账本（4 个月净 1374 元等）。每条模拟反馈都挂了证据编号 E1–E18。<br><br>
+<b>模拟的部分</b>：100 位用户的年龄、身份、原话由模型依据上述证据生成，用于穷举「可能的声音」，不是统计抽样。price_ok 是<b>声称意愿</b>，真实付费通常再打 3–5 折；样本为便利抽样，不代表小红书全站。<br><br>
+<b>怎么用</b>：把它当压力测试——先看哪类人会拒绝你、为什么，再对着改产品与话术；不要把它当销量预测。
+</div></div></section>
+
+<footer>100 位模拟用户 · 19 个群体 · 证据 E1–E18 · 2026-11-24 生成 · 规则与价格均来自公开页面实抓</footer>
+
+<script>
+var D = __DATA__;
+function el(h){var t=document.createElement('template');t.innerHTML=h.trim();return t.content.firstChild;}
+function barRow(label,val,max,cls){
+  return '<div class="bar-row"><div class="bar-lab">'+label+'</div>'+
+  '<div class="bar-track"><div class="bar-fill '+cls+'" style="width:'+(val/max*100)+'%"></div></div>'+
+  '<div class="bar-val">'+val+' 人</div></div>';
+}
+(function(){
+  var g=D.gstat, order=D.gorder.slice().sort(function(a,b){return g[b].n-g[a].n;});
+  var max=Math.max.apply(null,order.map(function(k){return g[k].n;}));
+  document.getElementById('bucketBars').innerHTML=order.map(function(k){return barRow(k,g[k].n,max,'');}).join('');
+})();
+(function(){
+  var w=D.wtp, keys=['1','3','5','9.9','10','15','20'].filter(function(k){return w[k]!==undefined;}), max=Math.max.apply(null,keys.map(function(k){return w[k];}));
+  var h='<div style="display:grid;grid-template-columns:repeat('+keys.length+',1fr);gap:10px;align-items:end;height:180px">';
+  keys.forEach(function(k){var v=w[k];
+    h+='<div style="display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%">'+
+    '<div style="font-size:12px;color:var(--sub);margin-bottom:6px">'+v+'</div>'+
+    '<div style="width:100%;max-width:58px;height:'+(v/max*126)+'px;border-radius:8px 8px 0 0;background:linear-gradient(180deg,#e0674f,#d8422c)"></div></div>';
+  });
+  h+='</div><div style="display:grid;grid-template-columns:repeat('+keys.length+',1fr);gap:10px;text-align:center;font-size:12px;color:var(--faint);margin-top:8px">';
+  keys.forEach(function(k){h+='<div>≥'+k+' 元</div>';});
+  h+='</div>';
+  document.getElementById('wtp').innerHTML=h;
+})();
+(function(){
+  var peak=Math.max.apply(null,D.rev.map(function(r){return r.revenue;}));
+  document.getElementById('revBody').innerHTML=D.rev.map(function(r){
+    var cls=(r.revenue===peak)?' class="peak"':'';
+    return '<tr'+cls+'><td>'+r.price+'</td><td>'+r.n+' 人</td><td>'+r.buyers+' 单</td><td>'+r.revenue.toLocaleString()+'</td></tr>';
+  }).join('');
+})();
+function bars(id,arr,cls){
+  var max=Math.max.apply(null,arr.map(function(x){return x[1];}));
+  document.getElementById(id).innerHTML=arr.map(function(x){return barRow(x[0],x[1],max,cls);}).join('');
+}
+bars('objBars',D.obj,'');
+bars('trgBars',D.trg,'trg');
+(function(){
+  var byId={}; D.personas.forEach(function(p){byId[p.id]=p;});
+  document.getElementById('groups').innerHTML=D.gorder.map(function(g){
+    var s=D.gstat[g], rep=byId[D.grep[g]];
+    var h='<div class="g"><div class="top"><span class="nm">'+g+'</span><span class="n">'+s.n+' 人</span></div>'+
+    '<div class="meta">心理价中位 <b>'+s.median+'</b> 元 · 买 '+s.buy+' / 看情况 '+s.maybe+' / 不买 '+s.no+'</div>'+
+    '<div class="stack"><i style="width:'+(s.buy/s.n*100)+'%;background:var(--buy)"></i>'+
+    '<i style="width:'+(s.maybe/s.n*100)+'%;background:var(--maybe)"></i>'+
+    '<i style="width:'+(s.no/s.n*100)+'%;background:var(--no)"></i></div>'+
+    '<div class="desc">'+(D.gdesc[g]||'')+'</div>';
+    if(rep){h+='<blockquote>'+rep.quote+'<span> —— '+rep.name+'，'+rep.job+'</span></blockquote>';}
+    return h+'</div>';
+  }).join('');
+})();
+(function(){
+  var wall=document.getElementById('wall'), wrap=document.getElementById('filters');
+  var fams=[['全部','all'],['会买','买'],['看情况','可能买'],['不买','不买'],['A 买家','A'],['B 踩坑','B'],['C 同行','C'],['D 博主','D'],['E 服务商','E']];
+  fams.forEach(function(f,i){
+    var b=el('<button class="fbtn'+(i===0?' on':'')+'" data-f="'+f[1]+'">'+f[0]+'</button>');
+    wrap.appendChild(b);
+  });
+  function card(p){
+    var cls=p.intent==='买'?'b':(p.intent==='可能买'?'m':'n');
+    var obj=(p.objections||[]).slice(0,3).map(function(o){return '<span class="chip o">'+o+'</span>';}).join('');
+    var trg=(p.triggers||[]).slice(0,3).map(function(t){return '<span class="chip t">'+t+'</span>';}).join('');
+    var tags=(p.tags||[]).slice(0,2).map(function(t){return '<span class="chip">'+t+'</span>';}).join('');
+    return '<div class="card" data-i="'+p.intent+'"><div class="ch"><span class="name">'+p.name+'</span>'+
+    '<span class="who">'+p.age+'岁 · '+p.gender+' · '+p.city+' · '+p.job+'</span>'+
+    '<span class="pill '+cls+'">'+p.intent+' · '+p.price_ok+'元</span></div>'+
+    '<q>'+p.quote+'</q><div class="chips">'+tags+trg+obj+'</div></div>';
+  }
+  function render(f){
+    wall.innerHTML=D.personas.filter(function(p){
+      return f==='all'||p.intent===f||p.bucket.charAt(0)===f;
+    }).map(card).join('');
+  }
+  render('all');
+  wrap.addEventListener('click',function(e){
+    var b=e.target.closest('.fbtn'); if(!b) return;
+    Array.prototype.forEach.call(wrap.querySelectorAll('.fbtn'),function(x){x.classList.remove('on');});
+    b.classList.add('on'); render(b.dataset.f);
+  });
+})();
+</script>
+</body>
+</html>
